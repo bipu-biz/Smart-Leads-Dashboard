@@ -1,0 +1,21 @@
+import mongoose, { Schema, Document } from 'mongoose';
+import { ILead } from '../types';
+
+export interface ILeadDocument extends ILead, Document {}
+
+const LeadSchema: Schema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  status: { 
+    type: String, 
+    enum: ['New', 'Contacted', 'Qualified', 'Lost'], 
+    default: 'New' 
+  },
+  source: { 
+    type: String, 
+    enum: ['Website', 'Instagram', 'Referral'], 
+    required: true 
+  },
+}, { timestamps: true });
+
+export default mongoose.model<ILeadDocument>('Lead', LeadSchema);
