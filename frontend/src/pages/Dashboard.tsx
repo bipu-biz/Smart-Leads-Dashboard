@@ -73,11 +73,11 @@ const Dashboard = () => {
   };
 
   const handleExportCSV = () => {
-    window.open('http://localhost:5000/api/leads/export', '_blank');
+    window.open(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/leads/export`, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-800">
       <Navbar />
       <div className="max-w-7xl mx-auto p-6">
         <div className="flex justify-between items-center mb-6">
@@ -102,7 +102,7 @@ const Dashboard = () => {
 
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow">
           {loading ? (
             <div className="text-center py-16 text-gray-400">
               <p>Loading leads...</p>

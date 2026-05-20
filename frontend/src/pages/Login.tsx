@@ -26,8 +26,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+      <div className="bg-white dark:bg-gray-900 dark:text-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center mb-6">Smart Leads</h2>
         <h3 className="text-lg text-center text-gray-600 mb-6">Login to your account</h3>
         {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}

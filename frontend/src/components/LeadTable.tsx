@@ -31,7 +31,7 @@ const LeadTable = ({ leads, onEdit, onDelete }: LeadTableProps) => {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-gray-50 text-left">
+          <tr className="bg-gray-50 dark:bg-gray-800 text-left">
             <th className="p-3 font-medium">Name</th>
             <th className="p-3 font-medium">Email</th>
             <th className="p-3 font-medium">Status</th>
@@ -42,7 +42,7 @@ const LeadTable = ({ leads, onEdit, onDelete }: LeadTableProps) => {
         </thead>
         <tbody>
           {leads.map((lead) => (
-            <tr key={lead._id} className="border-t hover:bg-gray-50">
+            <tr key={lead._id} className="border-t hover:bg-gray-50 dark:hover:bg-gray-700">
               <td className="p-3">{lead.name}</td>
               <td className="p-3">{lead.email}</td>
               <td className="p-3">
