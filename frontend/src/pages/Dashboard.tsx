@@ -35,6 +35,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchLeads();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, filters]);
 
   const handleFilterChange = (newFilters: typeof filters) => {

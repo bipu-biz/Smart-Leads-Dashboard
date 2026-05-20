@@ -20,6 +20,7 @@ const Filters = ({ onFilterChange }: FiltersProps) => {
       onFilterChange({ search, status, source, sort });
     }, 500);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, status, source, sort]);
 
   return (
