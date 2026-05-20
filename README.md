@@ -3,8 +3,8 @@
 A full-stack Lead Management Dashboard built with the MERN stack and TypeScript.
 
 ## Live Demo
-- Frontend: https://your-app.vercel.app
-- Backend: https://your-backend.onrender.com
+- Frontend: https://smart-leads-frontend-nine.vercel.app
+- Backend: https://smart-leads-dashboard-hbnu.onrender.com
 
 ## Tech Stack
 
