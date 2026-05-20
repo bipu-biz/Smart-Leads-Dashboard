@@ -73,9 +73,24 @@ const Dashboard = () => {
     }
   };
 
-  const handleExportCSV = () => {
-    window.open(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/leads/export`, '_blank');
-  };
+  const handleExportCSV = async () => {
+  try {
+    const token = localStorage.getItem('token');
+    const res = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/leads/export`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'leads.csv';
+    a.click();
+  } catch (err) {
+    setError('Failed to export CSV');
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-800">
